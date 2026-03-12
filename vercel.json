@@ -1,19 +1,13 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "CIT MIT frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    },
-    {
-      "src": "CIT MIT backend/api/index.js",
-      "use": "@vercel/node"
+  "installCommand": "cd \"CIT MIT backend\" && npm install && cd \"../CIT MIT frontend\" && npm install",
+  "buildCommand": "cd \"CIT MIT frontend\" && npm run build",
+  "outputDirectory": "CIT MIT frontend/dist",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "CIT MIT backend/**"
     }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "CIT MIT backend/api/index.js" },
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" }
   ]
 }

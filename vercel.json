@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd \"CIT MIT frontend\" && npm install && npm run build",
+  "outputDirectory": "CIT MIT frontend/dist",
+  "installCommand": "echo skip"
+}

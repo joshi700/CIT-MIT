@@ -1,0 +1,176 @@
+.dev-console {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  max-height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-console-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+}
+
+.dev-console-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.dev-console-step {
+  padding: 2px 8px;
+  background: var(--color-accent-bg);
+  color: var(--color-accent);
+  border-radius: 4px;
+  font-size: 0.7rem;
+}
+
+.dev-console-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dev-console-select {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  cursor: pointer;
+}
+
+.dev-console-close {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.dev-console-close:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.dev-console-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.dev-console-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dev-console-divider {
+  width: 1px;
+  background: var(--color-border);
+}
+
+.dev-console-pane-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.dev-console-pane-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.dev-console-pane-meta {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.dev-console-method {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-mit-recurring);
+}
+
+.dev-console-url {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dev-console-status {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.status-ok {
+  color: var(--color-success);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.status-err {
+  color: var(--color-error);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.dev-console-copy {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dev-console-copy:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.dev-console-json {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.dev-console-empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}

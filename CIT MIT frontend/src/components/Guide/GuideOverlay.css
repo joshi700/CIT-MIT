@@ -1,0 +1,112 @@
+.guide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.guide-step-indicator {
+  display: flex;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+.guide-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-border);
+  transition: all 0.3s;
+}
+
+.guide-dot.active {
+  background: var(--color-accent);
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+  transform: scale(1.2);
+}
+
+.guide-dot.done {
+  background: var(--color-success);
+}
+
+.guide-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(139, 92, 246, 0.15);
+  pointer-events: auto;
+}
+
+.guide-step-number {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+}
+
+.guide-step-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.guide-step-instruction {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.guide-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.guide-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.guide-btn:hover:not(:disabled) {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+}
+
+.guide-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.guide-btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.guide-btn-primary:hover:not(:disabled) {
+  background: #7c3aed;
+  color: white;
+}

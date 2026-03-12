@@ -1,5 +1,19 @@
 {
-  "buildCommand": "cd \"CIT MIT frontend\" && npm install && npm run build",
-  "outputDirectory": "CIT MIT frontend/dist",
-  "installCommand": "echo skip"
+  "version": 2,
+  "builds": [
+    {
+      "src": "CIT MIT frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "CIT MIT backend/api/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "CIT MIT backend/api/index.js" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }

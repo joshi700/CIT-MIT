@@ -39,8 +39,13 @@ app.get('/api/config', (req, res) => {
 // Error handler
 app.use(errorHandler);
 
-app.listen(config.port, () => {
-  console.log(`CIT/MIT Demo Server running on http://localhost:${config.port}`);
-  console.log(`Merchant ID: ${config.merchantId}`);
-  console.log(`Gateway: ${config.gatewayUrl}`);
-});
+// Start server only when run directly (not as a serverless function)
+if (require.main === module) {
+  app.listen(config.port, () => {
+    console.log(`CIT/MIT Demo Server running on http://localhost:${config.port}`);
+    console.log(`Merchant ID: ${config.merchantId}`);
+    console.log(`Gateway: ${config.gatewayUrl}`);
+  });
+}
+
+module.exports = app;
